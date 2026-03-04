@@ -371,6 +371,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    align-items: start;
   }
 
   .practitioner-card {
@@ -442,6 +443,37 @@
   .btn-ghost:hover {
     color: var(--gold);
     border-color: var(--gold);
+  }
+
+  .practitioner-price {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .dual-card {
+    position: relative;
+    border: 1px solid rgba(200, 154, 106, 0.25);
+  }
+
+  .dual-badge {
+    position: absolute;
+    top: 16px; right: 16px;
+    z-index: 10;
+    background: var(--burgundy);
+    color: var(--cream);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+  }
+
+  .second-offering {
+    padding: 20px 24px 28px;
+    border-top: 1px solid var(--mist);
+    background: rgba(200, 154, 106, 0.04);
   }
 
   /* CTA SECTION */
@@ -664,17 +696,21 @@
 
 <!-- STRIP -->
 <div class="intro-strip">
-  <span class="strip-item">Bodywork</span>
+  <span class="strip-item">Shiatsu Massage</span>
   <div class="strip-divider"></div>
-  <span class="strip-item">Energy Healing</span>
+  <span class="strip-item">Mobility & Recovery</span>
   <div class="strip-divider"></div>
-  <span class="strip-item">Somatic Therapy</span>
+  <span class="strip-item">Yoga & Sound Bath</span>
   <div class="strip-divider"></div>
-  <span class="strip-item">Coaching</span>
+  <span class="strip-item">Physical Therapy</span>
+  <div class="strip-divider"></div>
+  <span class="strip-item">Hypno Breathwork</span>
   <div class="strip-divider"></div>
   <span class="strip-item">Sound Healing</span>
   <div class="strip-divider"></div>
-  <span class="strip-item">Movement</span>
+  <span class="strip-item">Reiki</span>
+  <div class="strip-divider"></div>
+  <span class="strip-item">Clarity Readings</span>
 </div>
 
 <!-- WHO IT'S FOR -->
@@ -748,39 +784,142 @@
   </div>
   <div class="practitioners-grid">
 
+    <!-- Rhea Mallari -->
     <div class="practitioner-card">
-      <div class="practitioner-img">
-        <div class="practitioner-img-placeholder">M</div>
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #2a2535 0%, #3d3050 100%);">
+        <div class="practitioner-img-placeholder" style="color: #8a7a9a;">R</div>
       </div>
       <div class="practitioner-info">
-        <p class="practitioner-tag">Coaching · Business</p>
-        <h3 class="practitioner-name">Melissa Wong</h3>
-        <p class="practitioner-desc">Helping independent creatives build with clarity and purpose. Specializes in business alignment for multi-passionate artists.</p>
-        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book with Melissa →</a>
+        <p class="practitioner-tag">Shiatsu Massage · Stretching</p>
+        <h3 class="practitioner-name">Rhea Mallari</h3>
+        <p class="practitioner-price">$100/hr</p>
+        <p class="practitioner-desc">Stress-relieving pressure point therapy done over clothes or a towel. Rhythmic pressure supports circulation, organ function, and muscle recovery. Deep stretches ease tension and boost mobility.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book with Rhea →</a>
       </div>
     </div>
 
+    <!-- Mark Holzum -->
     <div class="practitioner-card">
-      <div class="practitioner-img" style="background: #ddd8cc;">
-        <div class="practitioner-img-placeholder">A</div>
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #1e2d3d 0%, #2a3f52 100%);">
+        <div class="practitioner-img-placeholder" style="color: #7a9aaa;">M</div>
       </div>
       <div class="practitioner-info">
-        <p class="practitioner-tag">Bodywork · Recovery</p>
-        <h3 class="practitioner-name">Add Practitioner</h3>
-        <p class="practitioner-desc">Your modality and specialty here. A brief line on what makes your approach unique to Feybl clients.</p>
-        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book a session →</a>
+        <p class="practitioner-tag">Mobility · Joint Recovery</p>
+        <h3 class="practitioner-name">Mark Holzum</h3>
+        <p class="practitioner-price">$100/hr</p>
+        <p class="practitioner-desc">Personalized 1:1 sessions focused on mobility, joint health, and pain relief. We assess how your body moves, identify what's limiting you, and apply targeted strategies to improve strength and long-term resilience.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book with Mark →</a>
       </div>
     </div>
 
+    <!-- Amy Nicole -->
     <div class="practitioner-card">
-      <div class="practitioner-img" style="background: #e8e0d4;">
-        <div class="practitioner-img-placeholder">+</div>
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #2a3530 0%, #3a4d45 100%);">
+        <div class="practitioner-img-placeholder" style="color: #8aaa96;">A</div>
       </div>
       <div class="practitioner-info">
-        <p class="practitioner-tag">Your Modality Here</p>
-        <h3 class="practitioner-name">Join the Program</h3>
-        <p class="practitioner-desc">Feybl is growing its practitioner roster. If you work with creatives and want a home at the House, let's connect.</p>
-        <a href="/cdn-cgi/l/email-protection#7a121f1616153a1c1f03181654191517" class="btn-ghost">Inquire →</a>
+        <p class="practitioner-tag">Yoga · Sound Bath · Mindfulness</p>
+        <h3 class="practitioner-name">Amy Nicole</h3>
+        <p class="practitioner-price">$75/hr</p>
+        <p class="practitioner-desc">Show up for yourself through consistent yoga and mindfulness. Vinyasa flow, yin/restorative, sound bath, or all mixed into one — with hands-on adjustments tailored to you.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book with Amy →</a>
+      </div>
+    </div>
+
+    <!-- Lizzy Rothstein — Physical Therapy -->
+    <div class="practitioner-card dual-card">
+      <div class="dual-badge">2 Offerings</div>
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #3d2020 0%, #552a2a 100%);">
+        <div class="practitioner-img-placeholder" style="color: #c09090;">L</div>
+      </div>
+      <div class="practitioner-info">
+        <p class="practitioner-tag">Physical Therapy</p>
+        <h3 class="practitioner-name">Lizzie Rothstein</h3>
+        <p class="practitioner-price">$200/hr</p>
+        <p class="practitioner-desc">One-on-one sessions for dancers dealing with pain or injury. Identifies root causes, builds a personalized recovery plan, refines movement patterns, and supports your optimal return to dance.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book Physical Therapy →</a>
+      </div>
+      <div class="second-offering">
+        <p class="practitioner-tag" style="margin-top:0;">Strength & Conditioning</p>
+        <p class="practitioner-price">— also available</p>
+        <p class="practitioner-desc" style="font-size:12px;">Performance-focused strength and conditioning for dancers seeking resilience, cross-training, and long-term wellness.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book S&C Session →</a>
+      </div>
+    </div>
+
+    <!-- Shannon Whalen -->
+    <div class="practitioner-card">
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #252535 0%, #333355 100%);">
+        <div class="practitioner-img-placeholder" style="color: #9090c0;">S</div>
+      </div>
+      <div class="practitioner-info">
+        <p class="practitioner-tag">Hypno Breathwork · Somatic Release</p>
+        <h3 class="practitioner-name">Shannon Whalen</h3>
+        <p class="practitioner-price">$150/hr</p>
+        <p class="practitioner-desc">A private guided session blending breathwork and somatic movement for artists, performers, and creatives. Regulates the nervous system, releases tension, and deepens embodied presence. Ideal for creative blocks, performance anxiety, and burnout.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book with Shannon →</a>
+      </div>
+    </div>
+
+    <!-- Reanna Holt — dual offering -->
+    <div class="practitioner-card dual-card">
+      <div class="dual-badge">2 Offerings</div>
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #352535 0%, #4a3550 100%);">
+        <div class="practitioner-img-placeholder" style="color: #b090b0;">R</div>
+      </div>
+      <div class="practitioner-info">
+        <p class="practitioner-tag">Sound Healer · Creative Reset</p>
+        <h3 class="practitioner-name">Reanna Holt</h3>
+        <p class="practitioner-price">$165/hr</p>
+        <p class="practitioner-desc">A restorative session combining gentle intuitive movement, breathwork, therapeutic sound, vocal toning, and journaling prompts for full creative reset.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book Creative Reset →</a>
+      </div>
+      <div class="second-offering">
+        <p class="practitioner-tag" style="margin-top:0;">Sound Healing & Integration</p>
+        <p class="practitioner-price">— also available</p>
+        <p class="practitioner-desc" style="font-size:12px;">Sound healing woven with guided journaling and gentle movement for nervous system regulation, emotional release, and creative realignment.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book Sound Session →</a>
+      </div>
+    </div>
+
+    <!-- Bruna Nessif -->
+    <div class="practitioner-card">
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #1e2d35 0%, #2a4045 100%);">
+        <div class="practitioner-img-placeholder" style="color: #80aab0;">B</div>
+      </div>
+      <div class="practitioner-info">
+        <p class="practitioner-tag">Reiki · Energy Healing</p>
+        <h3 class="practitioner-name">Bruna Nessif</h3>
+        <p class="practitioner-price">$250/hr</p>
+        <p class="practitioner-desc">One-hour sessions involving light head and hand massage, aromatherapy, full-body Reiki energy healing, and red light therapy — a complete energetic reset.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book with Bruna →</a>
+      </div>
+    </div>
+
+    <!-- Haley Jonae -->
+    <div class="practitioner-card">
+      <div class="practitioner-img" style="background: linear-gradient(135deg, #2d2820 0%, #3f3828 100%);">
+        <div class="practitioner-img-placeholder" style="color: #b0a880;">H</div>
+      </div>
+      <div class="practitioner-info">
+        <p class="practitioner-tag">Clarity Readings · Intuitive</p>
+        <h3 class="practitioner-name">Haley Jonae</h3>
+        <p class="practitioner-price">$222/hr</p>
+        <p class="practitioner-desc">A 1:1 intuitive reading that helps you reconnect with yourself and step into your next chapter with calm, grounded clarity. Explores what you're seeking and what's ready to shift — focused on alignment, not prediction.</p>
+        <a href="https://feyblhouse.optixapp.com/book/" class="btn-ghost" target="_blank">Book with Haley →</a>
+      </div>
+    </div>
+
+    <!-- Join card -->
+    <div class="practitioner-card" style="border: 1px dashed var(--sand);">
+      <div class="practitioner-img" style="background: var(--mist);">
+        <div class="practitioner-img-placeholder" style="color: var(--sand); font-size: 48px;">+</div>
+      </div>
+      <div class="practitioner-info">
+        <p class="practitioner-tag">Join the Program</p>
+        <h3 class="practitioner-name">Are you a practitioner?</h3>
+        <p class="practitioner-desc">Feybl is selective but growing. If you work with creatives and want a home at the House, we'd love to hear from you.</p>
+        <a href="mailto:hello@feybl.com" class="btn-ghost">Inquire →</a>
       </div>
     </div>
 
@@ -833,4 +972,4 @@
     <a href="https://feyblhouse.optixapp.com/book/">Book</a>
     <a href="https://instagram.com/feyblhouse">Instagram</a>
   </div>
-  <div class="footer-copy">© 2026 Feybl House, Burban
+  <div class="footer-copy">© 2026 Feybl House, Burbank
