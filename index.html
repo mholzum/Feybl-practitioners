@@ -692,6 +692,101 @@ nav a.nav-pill.gold:hover {
   gap: 3px;
 }
 
+/* ── CATEGORY SELECTOR ── */
+.category-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-bottom: 64px;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px 24px;
+  background: var(--cream);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.category-btn:hover { background: #e8e1d6; }
+.category-btn:hover::after { transform: scaleX(1); }
+
+.category-btn-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1;
+}
+
+.category-btn-sub {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.category-btn-arrow {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(26,35,48,0.35);
+  margin-top: 4px;
+}
+
+
+.p-category {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0 20px;
+  border-bottom: 1px solid var(--sand);
+  margin-bottom: 0;
+}
+
+.p-category:first-child { padding-top: 0; }
+
+.p-category-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1;
+}
+
+.p-category-line {
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+}
+
+.p-category-count {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 /* Practitioner card — vertical layout */
 .p-card {
   background: var(--cream);
@@ -1144,6 +1239,7 @@ footer {
   .who-right { min-height: 50vw; }
   .who-left { padding: 72px 32px; }
   .practitioners-section { padding: 80px 24px; }
+  .category-selector { grid-template-columns: 1fr; }
   .practitioners-grid { grid-template-columns: repeat(2, 1fr); }
   .p-card-join { flex-direction: column; gap: 20px; padding: 40px 32px; }
   .booking-note { padding: 28px 24px; }
@@ -1326,10 +1422,36 @@ footer {
       <p class="section-eyebrow">The Practitioners</p>
       <h2 class="practitioners-title">Who you'll<br>work <em>with.</em></h2>
     </div>
-    <span class="practitioners-count">8 practitioners · Burbank, CA</span>
+    <span class="practitioners-count">9 practitioners · Burbank, CA</span>
+  </div>
+
+  <!-- Category selector -->
+  <div class="category-selector reveal">
+    <a href="#body" class="category-btn">
+      <span class="category-btn-name">Body</span>
+      <span class="category-btn-sub">Massage · Mobility · Therapy · Breathwork</span>
+      <span class="category-btn-arrow">↓ 4 practitioners</span>
+    </a>
+    <a href="#mind" class="category-btn">
+      <span class="category-btn-name">Mind</span>
+      <span class="category-btn-sub">Yoga · Nutrition · Intuitive Readings</span>
+      <span class="category-btn-arrow">↓ 3 practitioners</span>
+    </a>
+    <a href="#spirit" class="category-btn">
+      <span class="category-btn-name">Spirit</span>
+      <span class="category-btn-sub">Sound Healing · Reiki · Energy Work</span>
+      <span class="category-btn-arrow">↓ 2 practitioners</span>
+    </a>
   </div>
 
   <div class="practitioners-grid">
+
+    <!-- ── BODY ── -->
+    <div class="p-category reveal" id="body">
+      <span class="p-category-name">Body</span>
+      <div class="p-category-line"></div>
+      <span class="p-category-count">4 practitioners</span>
+    </div>
 
     <!-- Rhea -->
     <div class="p-card reveal">
@@ -1379,22 +1501,6 @@ footer {
       </div>
     </div>
 
-    <!-- Amy -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/amy-nicole.jpg" alt="Amy Nicole" style="object-position: center 20%;">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Yoga · Sound Bath · Mindfulness</span>
-          <h3 class="p-name">Amy Nicole</h3>
-          <p class="p-price">$75 / hr</p>
-          <p class="p-desc">Show up for yourself through consistent yoga and mindfulness. Vinyasa flow, yin/restorative, sound bath, or all woven together — with hands-on adjustments tailored to you.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619830" class="p-book" target="_blank">Book with Amy →</a>
-      </div>
-    </div>
-
     <!-- Lizzie -->
     <div class="p-card reveal">
       <div class="p-card-img">
@@ -1415,6 +1521,67 @@ footer {
         </div>
         <a href="https://feyblhouse.optixapp.com/book/resource/619828" class="p-book" target="_blank" style="margin-top:20px;">Book Physical Therapy →</a>
       </div>
+    </div>
+
+    <!-- ── MIND ── -->
+    <div class="p-category reveal" id="mind">
+      <span class="p-category-name">Mind</span>
+      <div class="p-category-line"></div>
+      <span class="p-category-count">3 practitioners</span>
+    </div>
+
+    <!-- Amy -->
+    <div class="p-card reveal">
+      <div class="p-card-img">
+        <img src="https://mholzum.github.io/Feybl-practitioners/amy-nicole.jpg" alt="Amy Nicole" style="object-position: center 20%;">
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-top">
+          <span class="p-tag">Yoga · Sound Bath · Mindfulness</span>
+          <h3 class="p-name">Amy Nicole</h3>
+          <p class="p-price">$75 / hr</p>
+          <p class="p-desc">Show up for yourself through consistent yoga and mindfulness. Vinyasa flow, yin/restorative, sound bath, or all woven together — with hands-on adjustments tailored to you.</p>
+        </div>
+        <a href="https://feyblhouse.optixapp.com/book/resource/619830" class="p-book" target="_blank">Book with Amy →</a>
+      </div>
+    </div>
+
+    <!-- Sherry -->
+    <div class="p-card reveal">
+      <div class="p-card-img">
+        <img src="https://mholzum.github.io/Feybl-practitioners/sherry-lin.jpg" alt="Sherry Lin">
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-top">
+          <span class="p-tag">Registered Dietician · Nutrition</span>
+          <h3 class="p-name">Sherry Lin</h3>
+          <p class="p-price">Coming soon</p>
+          <p class="p-desc">Evidence-based nutrition counseling for creatives and performers. Personalized guidance on fueling your body to support energy, recovery, and long-term wellbeing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Haley -->
+    <div class="p-card reveal">
+      <div class="p-card-img">
+        <img src="https://mholzum.github.io/Feybl-practitioners/haley-jonae.jpg" alt="Haley Jonae" style="object-position: center 25%;">
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-top">
+          <span class="p-tag">Clarity Readings · Intuitive</span>
+          <h3 class="p-name">Haley Jonae</h3>
+          <p class="p-price">$222 / hr</p>
+          <p class="p-desc">A 1:1 intuitive reading that helps you reconnect with yourself and step into your next chapter with calm, grounded clarity — focused on alignment, not prediction.</p>
+        </div>
+        <a href="https://feyblhouse.optixapp.com/book/resource/625452" class="p-book" target="_blank">Book with Haley →</a>
+      </div>
+    </div>
+
+    <!-- ── SPIRIT ── -->
+    <div class="p-category reveal" id="spirit">
+      <span class="p-category-name">Spirit</span>
+      <div class="p-category-line"></div>
+      <span class="p-category-count">2 practitioners</span>
     </div>
 
     <!-- Reanna -->
@@ -1452,38 +1619,6 @@ footer {
           <p class="p-desc">One-hour sessions with light head and hand massage, aromatherapy, full-body Reiki energy healing, and red light therapy — a complete energetic reset for body and mind.</p>
         </div>
         <a href="https://feyblhouse.optixapp.com/book/resource/619825" class="p-book" target="_blank">Book with Bruna →</a>
-      </div>
-    </div>
-
-    <!-- Haley -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/haley-jonae.jpg" alt="Haley Jonae" style="object-position: center 25%;">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Clarity Readings · Intuitive</span>
-          <h3 class="p-name">Haley Jonae</h3>
-          <p class="p-price">$222 / hr</p>
-          <p class="p-desc">A 1:1 intuitive reading that helps you reconnect with yourself and step into your next chapter with calm, grounded clarity — focused on alignment, not prediction.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/625452" class="p-book" target="_blank">Book with Haley →</a>
-      </div>
-    </div>
-
-    <!-- Sherry -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/sherry-lin.jpg" alt="Sherry Lin">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Nutrition Counseling</span>
-          <h3 class="p-name">Sherry Lin</h3>
-          <p class="p-price">$200 / hr</p>
-          <p class="p-desc">A registered dietitian & movement artist helping creative humans heal their gut, trust their bodies, and nourish themselves without guilt or restriction. Sessions are 60, 75, or 90 minutes.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619827" class="p-book" target="_blank">Book with Sherry →</a>
       </div>
     </div>
 
