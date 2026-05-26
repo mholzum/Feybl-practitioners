@@ -1334,9 +1334,9 @@ footer {
   .service-menu-section { padding: 60px 24px 80px; }
   .service-menu-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .service-menu-meta { align-items: flex-start; }
-  .service-row { grid-template-columns: 1fr auto; gap: 16px; padding-right: 0; }
+  .service-row { grid-template-columns: 1fr auto auto; gap: 12px; padding-right: 0; }
   .service-row-practitioner { display: none; }
-  .service-row-book { display: none; }
+  .service-row-book { opacity: 1; transform: none; font-size: 10px; color: var(--gold); }
   .service-group-name { font-size: 40px; }
   .daypass-section { padding: 80px 24px; }
   .daypass-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -1369,7 +1369,7 @@ footer {
   </a>
   <div class="nav-links">
     <a href="https://feybl.com/social-club-for-artists-in-los-angeles/" class="nav-pill gold" target="_blank">Become a Member</a>
-    <a href="#practitioners" class="nav-pill">Book a Session</a>
+    <a href="https://feybl-ai.vercel.app/book" class="nav-pill">Book a Session</a>
   </div>
 </nav>
 
@@ -1392,8 +1392,8 @@ footer {
       <strong>Every booking includes a full day pass</strong> — arrive early, stay as long as you need.
     </p>
     <div class="hero-actions">
-      <a href="#practitioners" class="btn-hero">Meet the Practitioners</a>
-      <a href="https://feybl.com" class="btn-hero-ghost" target="_blank">Explore the Clubhouse →</a>
+      <a href="https://feybl-ai.vercel.app/book" class="btn-hero">Book a Session</a>
+      <a href="https://feybl-ai.vercel.app/canvas" class="btn-hero-ghost">Already a Member? →</a>
     </div>
   </div>
 
@@ -1428,6 +1428,143 @@ footer {
     <div class="marquee-item"><span>Somatic Release</span><div class="marquee-dot"></div></div>
   </div>
 </div>
+
+<!-- SERVICE MENU -->
+<section class="service-menu-section" id="practitioners">
+  <div class="service-menu-header reveal">
+    <div>
+      <p class="section-eyebrow">What We Offer</p>
+      <h2 class="service-menu-title">Choose your<br><em>session.</em></h2>
+    </div>
+    <div class="service-menu-meta">
+      <span class="service-menu-count">9 sessions · Burbank, CA</span>
+      <span class="live-clock" id="burbank-clock"></span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="service-group reveal">
+    <div class="service-group-label">
+      <span class="service-group-name">Body</span>
+      <div class="service-group-rule"></div>
+    </div>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Shiatsu Massage</span>
+        <span class="service-row-desc">Rhythmic pressure and deep stretches for circulation, organ function, and muscle recovery.</span>
+      </div>
+      <span class="service-row-practitioner">Rhea Mallari</span>
+      <span class="service-row-price">$100 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Mobility &amp; Joint Recovery</span>
+        <span class="service-row-desc">1:1 sessions targeting mobility, joint health, and pain relief. Assess, identify, build long-term resilience.</span>
+      </div>
+      <span class="service-row-practitioner">Mark Holzum</span>
+      <span class="service-row-price">$100 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Hypnobreathwork &amp; Somatic Release</span>
+        <span class="service-row-desc">Guided breathwork and somatic movement for nervous system regulation, creative blocks, and burnout.</span>
+      </div>
+      <span class="service-row-practitioner">Shannon Whalen</span>
+      <span class="service-row-price">$150 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Physical Therapy</span>
+        <span class="service-row-desc">1:1 sessions for pain, injury, and recovery. Root cause diagnosis, personalized plan, return to movement.</span>
+      </div>
+      <span class="service-row-practitioner">Lizzy Rothstein</span>
+      <span class="service-row-price">$200 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row service-row-sub">
+      <div class="service-row-info">
+        <span class="service-row-name">Strength &amp; Conditioning</span>
+        <span class="service-row-desc">Performance conditioning for dancers and creatives seeking resilience and cross-training.</span>
+      </div>
+      <span class="service-row-practitioner">Lizzy Rothstein</span>
+      <span class="service-row-price">Also available</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+  </div>
+
+  <!-- MIND -->
+  <div class="service-group reveal">
+    <div class="service-group-label">
+      <span class="service-group-name">Mind</span>
+      <div class="service-group-rule"></div>
+    </div>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Past Life Healing</span>
+        <span class="service-row-desc">30-minute sessions with intuitive guidance and energetic clearing — release subconscious blocks, return to flow.</span>
+      </div>
+      <span class="service-row-practitioner">Faith Streng</span>
+      <span class="service-row-price">$250 / session</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Nutrition Counseling</span>
+        <span class="service-row-desc">Evidence-based guidance on fueling your body for energy, recovery, and long-term wellbeing.</span>
+      </div>
+      <span class="service-row-practitioner">Sherry Lin</span>
+      <span class="service-row-price">$200 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Clarity Readings</span>
+        <span class="service-row-desc">1:1 intuitive reading for reconnection and alignment. Calm, grounded, focused on what comes next.</span>
+      </div>
+      <span class="service-row-practitioner">Haley Jonae</span>
+      <span class="service-row-price">$222 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+  </div>
+
+  <!-- SPIRIT -->
+  <div class="service-group reveal">
+    <div class="service-group-label">
+      <span class="service-group-name">Spirit</span>
+      <div class="service-group-rule"></div>
+    </div>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Creative Reset</span>
+        <span class="service-row-desc">Sound, movement, breathwork, and journaling woven into a full creative reset for body and nervous system.</span>
+      </div>
+      <span class="service-row-practitioner">Reanna Holt</span>
+      <span class="service-row-price">$165 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row service-row-sub">
+      <div class="service-row-info">
+        <span class="service-row-name">Sound Healing &amp; Integration</span>
+        <span class="service-row-desc">Therapeutic sound with guided journaling for nervous system regulation and creative realignment.</span>
+      </div>
+      <span class="service-row-practitioner">Reanna Holt</span>
+      <span class="service-row-price">Also available</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feybl-ai.vercel.app/book" class="service-row">
+      <div class="service-row-info">
+        <span class="service-row-name">Reiki Healing</span>
+        <span class="service-row-desc">Full-body energy healing with head massage, aromatherapy, and red light therapy — a complete energetic reset.</span>
+      </div>
+      <span class="service-row-practitioner">Bruna Nessif</span>
+      <span class="service-row-price">$250 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+  </div>
+</section>
 
 <!-- THE OFFER -->
 <section class="offer-section" id="about">
@@ -1516,143 +1653,6 @@ footer {
   </div>
 </section>
 
-<!-- SERVICE MENU -->
-<section class="service-menu-section" id="practitioners">
-  <div class="service-menu-header reveal">
-    <div>
-      <p class="section-eyebrow">What We Offer</p>
-      <h2 class="service-menu-title">Choose your<br><em>session.</em></h2>
-    </div>
-    <div class="service-menu-meta">
-      <span class="service-menu-count">9 sessions · Burbank, CA</span>
-      <span class="live-clock" id="burbank-clock"></span>
-    </div>
-  </div>
-
-  <!-- BODY -->
-  <div class="service-group reveal">
-    <div class="service-group-label">
-      <span class="service-group-name">Body</span>
-      <div class="service-group-rule"></div>
-    </div>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619823" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Shiatsu Massage</span>
-        <span class="service-row-desc">Rhythmic pressure and deep stretches for circulation, organ function, and muscle recovery.</span>
-      </div>
-      <span class="service-row-practitioner">Rhea Mallari</span>
-      <span class="service-row-price">$100 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/623069" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Mobility &amp; Joint Recovery</span>
-        <span class="service-row-desc">1:1 sessions targeting mobility, joint health, and pain relief. Assess, identify, build long-term resilience.</span>
-      </div>
-      <span class="service-row-practitioner">Mark Holzum</span>
-      <span class="service-row-price">$100 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619831" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Hypnobreathwork &amp; Somatic Release</span>
-        <span class="service-row-desc">Guided breathwork and somatic movement for nervous system regulation, creative blocks, and burnout.</span>
-      </div>
-      <span class="service-row-practitioner">Shannon Whalen</span>
-      <span class="service-row-price">$150 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619828" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Physical Therapy</span>
-        <span class="service-row-desc">1:1 sessions for pain, injury, and recovery. Root cause diagnosis, personalized plan, return to movement.</span>
-      </div>
-      <span class="service-row-practitioner">Lizzy Rothstein</span>
-      <span class="service-row-price">$200 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/623221" class="service-row service-row-sub" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Strength &amp; Conditioning</span>
-        <span class="service-row-desc">Performance conditioning for dancers and creatives seeking resilience and cross-training.</span>
-      </div>
-      <span class="service-row-practitioner">Lizzy Rothstein</span>
-      <span class="service-row-price">Also available</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-  </div>
-
-  <!-- MIND -->
-  <div class="service-group reveal">
-    <div class="service-group-label">
-      <span class="service-group-name">Mind</span>
-      <div class="service-group-rule"></div>
-    </div>
-    <a href="https://feyblhouse.optixapp.com/book/resource/632063" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Past Life Healing</span>
-        <span class="service-row-desc">30-minute sessions with intuitive guidance and energetic clearing — release subconscious blocks, return to flow.</span>
-      </div>
-      <span class="service-row-practitioner">Faith Streng</span>
-      <span class="service-row-price">$250 / session</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619827" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Nutrition Counseling</span>
-        <span class="service-row-desc">Evidence-based guidance on fueling your body for energy, recovery, and long-term wellbeing.</span>
-      </div>
-      <span class="service-row-practitioner">Sherry Lin</span>
-      <span class="service-row-price">$200 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/625452" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Clarity Readings</span>
-        <span class="service-row-desc">1:1 intuitive reading for reconnection and alignment. Calm, grounded, focused on what comes next.</span>
-      </div>
-      <span class="service-row-practitioner">Haley Jonae</span>
-      <span class="service-row-price">$222 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-  </div>
-
-  <!-- SPIRIT -->
-  <div class="service-group reveal">
-    <div class="service-group-label">
-      <span class="service-group-name">Spirit</span>
-      <div class="service-group-rule"></div>
-    </div>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619829" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Creative Reset</span>
-        <span class="service-row-desc">Sound, movement, breathwork, and journaling woven into a full creative reset for body and nervous system.</span>
-      </div>
-      <span class="service-row-practitioner">Reanna Holt</span>
-      <span class="service-row-price">$165 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619822" class="service-row service-row-sub" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Sound Healing &amp; Integration</span>
-        <span class="service-row-desc">Therapeutic sound with guided journaling for nervous system regulation and creative realignment.</span>
-      </div>
-      <span class="service-row-practitioner">Reanna Holt</span>
-      <span class="service-row-price">Also available</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619825" class="service-row" target="_blank">
-      <div class="service-row-info">
-        <span class="service-row-name">Reiki Healing</span>
-        <span class="service-row-desc">Full-body energy healing with head massage, aromatherapy, and red light therapy — a complete energetic reset.</span>
-      </div>
-      <span class="service-row-practitioner">Bruna Nessif</span>
-      <span class="service-row-price">$250 / hr</span>
-      <span class="service-row-book">Book →</span>
-    </a>
-  </div>
-</section>
-
 <!-- DAY PASS INTERSTITIAL -->
 <section class="daypass-section">
   <div class="daypass-inner">
@@ -1676,47 +1676,47 @@ footer {
 <section class="practitioners-compact-section">
   <h2 class="practitioners-compact-title reveal">The people behind<br><em>the sessions.</em></h2>
   <div class="practitioners-compact-grid">
-    <a href="https://feyblhouse.optixapp.com/book/resource/619823" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/rhea-mallari.jpg" alt="Rhea Mallari"></div>
       <span class="pc-name">Rhea Mallari</span>
       <span class="pc-specialty">Shiatsu Massage</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/623069" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/mark-holzum.jpg" alt="Mark Holzum"></div>
       <span class="pc-name">Mark Holzum</span>
       <span class="pc-specialty">Mobility</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619831" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/shannon-whalen.jpg" alt="Shannon Whalen"></div>
       <span class="pc-name">Shannon Whalen</span>
       <span class="pc-specialty">Breathwork</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619828" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/lizzie-rothstein.jpg" alt="Lizzy Rothstein"></div>
       <span class="pc-name">Lizzy Rothstein</span>
       <span class="pc-specialty">Physical Therapy</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/632063" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/faith-streng.jpg" alt="Faith Streng"></div>
       <span class="pc-name">Faith Streng</span>
       <span class="pc-specialty">Past Life Healing</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619827" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/sherry-lin.jpg" alt="Sherry Lin"></div>
       <span class="pc-name">Sherry Lin</span>
       <span class="pc-specialty">Nutrition</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/625452" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/haley-jonae.jpg" alt="Haley Jonae" style="object-position:center 25%;"></div>
       <span class="pc-name">Haley Jonae</span>
       <span class="pc-specialty">Clarity Readings</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619829" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/reanna-holt.jpg" alt="Reanna Holt"></div>
       <span class="pc-name">Reanna Holt</span>
       <span class="pc-specialty">Sound Healing</span>
     </a>
-    <a href="https://feyblhouse.optixapp.com/book/resource/619825" class="pc-portrait reveal" target="_blank">
+    <a href="https://feybl-ai.vercel.app/book" class="pc-portrait reveal" target="_blank">
       <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/bruna-nessif.jpg" alt="Bruna Nessif"></div>
       <span class="pc-name">Bruna Nessif</span>
       <span class="pc-specialty">Reiki</span>
@@ -1731,7 +1731,7 @@ footer {
 <!-- BOOKING NOTE -->
 <div class="booking-note">
   <div class="booking-note-icon">ℹ</div>
-  <p><strong>Create your free Feybl account at checkout</strong> in under a minute to access your bookings, session history, and the <a href="https://apps.apple.com/us/app/feybl/id6504498857" target="_blank" style="color:var(--gold);">Feybl app</a>. Questions? Call or text us at <a href="tel:+17474002155" style="color:var(--gold);">(747) 400-2155</a>.</p>
+  <p><strong>Already a Feybl member?</strong> <a href="https://feybl-ai.vercel.app/canvas" style="color:var(--gold);">Open the member canvas →</a> &nbsp;·&nbsp; Not a member yet — <strong>no problem.</strong> Book below and create your free account in under a minute at checkout. Questions? <a href="tel:+17474002155" style="color:var(--gold);">(747) 400-2155</a>.</p>
 </div>
 
 <!-- CTA -->
@@ -1743,8 +1743,8 @@ footer {
     <h2 class="cta-title">Your next session<br><em>starts here.</em></h2>
     <p class="cta-body">Browse our practitioners, find the right fit, and book directly. Most sessions available within the week. Every booking includes your full day pass.</p>
     <div class="cta-actions">
-      <a href="https://feyblhouse.optixapp.com/book/" class="btn-cta" target="_blank">Book a Session</a>
-      <a href="https://feybl.com/social-club-for-artists-in-los-angeles/" class="btn-cta-outline" target="_blank">Explore Membership</a>
+      <a href="https://feybl-ai.vercel.app/book" class="btn-cta">Book a Session</a>
+      <a href="https://feybl-ai.vercel.app/canvas" class="btn-cta-outline">Already a Member? →</a>
     </div>
   </div>
 </section>
@@ -1786,7 +1786,7 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Click "Book" on any practitioner card. You'll be taken to their real-time availability — from there you'll select your time and create a free Feybl account to complete the booking. It takes about 60 seconds. Prefer to book by phone? Call or text us at <a href="tel:+17474002155">(747) 400-2155</a>.
+          Hit "Book a Session" — you'll see all available practitioners and their real-time availability. Pick your session, choose a time, and create your free Feybl account at checkout. The whole thing takes about 60 seconds. Already a member? Use the <a href="https://feybl-ai.vercel.app/canvas">member canvas</a> instead. Prefer phone? <a href="tel:+17474002155">(747) 400-2155</a>.
         </div>
       </div>
     </div>
@@ -1837,7 +1837,7 @@ footer {
   </a>
   <div class="footer-links">
     <a href="https://feybl.com">Main Site</a>
-    <a href="https://feyblhouse.optixapp.com/book/">Book</a>
+    <a href="https://feybl-ai.vercel.app/book">Book</a>
     <a href="https://instagram.com/feyblhouse">Instagram</a>
     <a href="tel:+17474002155">Call / Text</a>
   </div>
