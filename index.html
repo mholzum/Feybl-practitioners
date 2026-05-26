@@ -654,22 +654,22 @@ nav a.nav-pill.gold:hover {
   max-width: 280px;
 }
 
-/* ── PRACTITIONERS ── */
-.practitioners-section {
+/* ── SERVICE MENU ── */
+.service-menu-section {
   background: var(--warm-white);
-  padding: 48px 72px 100px;
+  padding: 72px 72px 100px;
 }
 
-.practitioners-header {
+.service-menu-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 64px;
+  margin-bottom: 16px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--sand);
 }
 
-.practitioners-title {
+.service-menu-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(38px, 4vw, 56px);
   font-weight: 300;
@@ -677,193 +677,314 @@ nav a.nav-pill.gold:hover {
   color: var(--dark);
 }
 
-.practitioners-title em { font-style: italic; color: var(--gold); }
+.service-menu-title em { font-style: italic; color: var(--gold); }
 
-.practitioners-count {
+.service-menu-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.service-menu-count {
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #9a8870;
 }
 
-.practitioners-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3px;
-}
-
-/* ── CATEGORY SELECTOR ── */
-.category-selector {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  margin-bottom: 64px;
-}
-
-.category-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 40px 24px;
-  background: var(--cream);
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.category-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.category-btn:hover { background: #e8e1d6; }
-.category-btn:hover::after { transform: scaleX(1); }
-
-.category-btn-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--dark);
-  line-height: 1;
-}
-
-.category-btn-sub {
-  font-size: 10px;
-  letter-spacing: 0.2em;
+.live-clock {
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
+  opacity: 0.7;
 }
 
-.category-btn-arrow {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: rgba(26,35,48,0.35);
-  margin-top: 4px;
-}
+/* Service category group */
+.service-group { margin-bottom: 4px; }
 
-
-.p-category {
-  grid-column: 1 / -1;
+.service-group-label {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 40px 0 20px;
-  border-bottom: 1px solid var(--sand);
-  margin-bottom: 0;
+  gap: 24px;
+  padding: 44px 0 12px;
 }
 
-.p-category:first-child { padding-top: 0; }
-
-.p-category-name {
+.service-group-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 3vw, 44px);
+  font-size: clamp(44px, 5vw, 64px);
   font-weight: 300;
   font-style: italic;
   color: var(--dark);
   line-height: 1;
+  flex-shrink: 0;
 }
 
-.p-category-line {
+.service-group-rule {
   flex: 1;
   height: 1px;
   background: var(--sand);
 }
 
-.p-category-count {
+/* Service row */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 40px;
+  padding: 22px 16px 22px 0;
+  border-bottom: 1px solid rgba(212,184,150,0.3);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.service-row:hover::before { transform: translateX(0); }
+.service-row > * { position: relative; z-index: 1; }
+
+.service-row-info { min-width: 0; }
+
+.service-row-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.1;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.service-row:hover .service-row-name { color: var(--burgundy); }
+
+.service-row-desc {
+  font-size: 11px;
+  color: #9a8870;
+  line-height: 1.55;
+  margin-top: 5px;
+  display: block;
+  max-width: 480px;
+}
+
+.service-row-practitioner {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #9a8870;
+  white-space: nowrap;
+}
+
+.service-row-price {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #9a8870;
+  white-space: nowrap;
+  min-width: 100px;
+  text-align: right;
+}
+
+.service-row-book {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dark);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  padding: 9px 18px;
+  border: 1px solid rgba(26,35,48,0.22);
+}
+
+.service-row:hover .service-row-book {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.service-row-sub {
+  padding-left: 24px;
+  border-left: 2px solid var(--mist);
+  margin-left: 4px;
+}
+
+.service-row-sub .service-row-name {
+  font-size: clamp(16px, 1.5vw, 22px);
+  color: #6a7070;
+}
+
+/* ── DAY PASS INTERSTITIAL ── */
+.daypass-section {
+  background: var(--darker);
+  padding: 120px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.daypass-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.daypass-eyebrow {
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold);
+  margin-bottom: 24px;
+  display: block;
 }
 
-/* Practitioner card — vertical layout */
-.p-card {
-  background: var(--cream);
+.daypass-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 300;
+  line-height: 0.97;
+  color: var(--cream);
+  margin-bottom: 36px;
+  letter-spacing: -0.01em;
+}
+
+.daypass-title em { font-style: italic; color: var(--sand); }
+
+.daypass-body {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(245,240,232,0.55);
+  max-width: 360px;
+  margin-bottom: 28px;
+}
+
+.daypass-hours {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.daypass-photos {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  height: 500px;
+}
+
+.daypass-photos-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.daypass-photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── PRACTITIONERS COMPACT ── */
+.practitioners-compact-section {
+  background: var(--warm-white);
+  padding: 80px 72px 100px;
+}
+
+.practitioners-compact-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1.1;
+  margin-bottom: 48px;
+}
+
+.practitioners-compact-title em { font-style: italic; color: var(--gold); }
+
+.practitioners-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 20px 12px;
+  align-items: start;
+}
+
+.pc-portrait {
   display: flex;
   flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.3s ease;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  gap: 10px;
 }
 
-.p-card:hover { background: #e8e1d6; }
-
-.p-card-img {
-  position: relative;
+.pc-img {
+  width: 100%;
+  aspect-ratio: 1/1;
   overflow: hidden;
   background: var(--cream);
-  aspect-ratio: 1/1;
-  flex-shrink: 0;
 }
 
-.p-card-img img {
+.pc-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 15%;
   display: block;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%);
 }
 
-.p-card:hover .p-card-img img { transform: scale(1.03); }
-
-.p-card-body {
-  padding: 18px 20px 24px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.pc-portrait:hover .pc-img img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
-.p-card-top { flex: 1; }
-
-.p-tag {
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 10px;
-  display: block;
-}
-
-.p-name {
+.pc-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--dark);
-  margin-bottom: 4px;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
-.p-price {
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  color: #8a7060;
-  margin-bottom: 10px;
-  font-weight: 400;
+.pc-specialty {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: -4px;
 }
 
-.p-desc {
-  font-size: 12px;
-  line-height: 1.7;
-  color: #6a7070;
-  margin-bottom: 18px;
-}
-
-.p-book {
-  display: inline-flex;
+.practitioners-join {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--sand);
+  margin-top: 28px;
+  padding-top: 36px;
+  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+}
+
+.practitioners-join-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--dark);
+}
+
+.practitioners-join-text em { font-style: italic; color: var(--gold); }
+
+.btn-join-sm {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -871,44 +992,16 @@ nav a.nav-pill.gold:hover {
   text-decoration: none;
   border-bottom: 1px solid rgba(26,35,48,0.3);
   padding-bottom: 3px;
-  width: fit-content;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
-.p-book:hover {
+.btn-join-sm:hover {
   color: var(--burgundy);
   border-color: var(--burgundy);
-  gap: 14px;
 }
 
-/* Second offering within card */
-.p-second {
-  border-top: 1px solid var(--mist);
-  margin-top: 20px;
-  padding-top: 18px;
-}
-
-.p-second .p-tag { margin-bottom: 6px; }
-.p-second .p-desc { font-size: 12px; margin-bottom: 14px; }
-.p-second .p-price { font-size: 10px; margin-bottom: 10px; color: #a08070; }
-
-/* Join card — spans full width */
-.p-card-join {
-  background: var(--dark);
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
-  padding: 48px 72px;
-  text-align: center;
-  border: 1px dashed rgba(200,154,106,0.2);
-  transition: background 0.3s ease;
-}
-
-.p-card-join:hover { background: #1e2538; }
-
+/* keep join card img rule for any legacy use */
 .p-card-join img {
   height: 44px;
   width: auto;
@@ -1238,10 +1331,19 @@ footer {
   .who-section { grid-template-columns: 1fr; }
   .who-right { min-height: 50vw; }
   .who-left { padding: 72px 32px; }
-  .practitioners-section { padding: 80px 24px; }
-  .category-selector { grid-template-columns: 1fr; }
-  .practitioners-grid { grid-template-columns: repeat(2, 1fr); }
-  .p-card-join { flex-direction: column; gap: 20px; padding: 40px 32px; }
+  .service-menu-section { padding: 60px 24px 80px; }
+  .service-menu-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .service-menu-meta { align-items: flex-start; }
+  .service-row { grid-template-columns: 1fr auto; gap: 16px; padding-right: 0; }
+  .service-row-practitioner { display: none; }
+  .service-row-book { display: none; }
+  .service-group-name { font-size: 40px; }
+  .daypass-section { padding: 80px 24px; }
+  .daypass-inner { grid-template-columns: 1fr; gap: 48px; }
+  .daypass-photos { height: 320px; }
+  .practitioners-compact-section { padding: 60px 24px 80px; }
+  .practitioners-compact-grid { grid-template-columns: repeat(3, 1fr); gap: 16px 10px; }
+  .practitioners-join { flex-direction: column; gap: 16px; align-items: flex-start; }
   .booking-note { padding: 28px 24px; }
   .cta-content { padding: 72px 32px; }
   .faq-section { padding: 80px 24px; }
@@ -1252,9 +1354,8 @@ footer {
 @media (max-width: 640px) {
   nav a.nav-pill { padding: 8px 12px; font-size: 9px; }
   .nav-logo img { height: 26px; }
-  .practitioners-grid { grid-template-columns: repeat(2, 1fr); }
-  .p-card-join { min-height: auto; padding: 36px 24px; }
-  .practitioners-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .practitioners-compact-grid { grid-template-columns: repeat(3, 1fr); }
+  .service-row-price { min-width: auto; }
   .gallery-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -1415,222 +1516,215 @@ footer {
   </div>
 </section>
 
-<!-- PRACTITIONERS -->
-<section class="practitioners-section" id="practitioners">
-  <div class="practitioners-header reveal">
+<!-- SERVICE MENU -->
+<section class="service-menu-section" id="practitioners">
+  <div class="service-menu-header reveal">
     <div>
-      <p class="section-eyebrow">The Practitioners</p>
-      <h2 class="practitioners-title">Who you'll<br>work <em>with.</em></h2>
+      <p class="section-eyebrow">What We Offer</p>
+      <h2 class="service-menu-title">Choose your<br><em>session.</em></h2>
     </div>
-    <span class="practitioners-count">9 practitioners · Burbank, CA</span>
+    <div class="service-menu-meta">
+      <span class="service-menu-count">9 sessions · Burbank, CA</span>
+      <span class="live-clock" id="burbank-clock"></span>
+    </div>
   </div>
 
-  <!-- Category selector -->
-  <div class="category-selector reveal">
-    <a href="#body" class="category-btn">
-      <span class="category-btn-name">Body</span>
-      <span class="category-btn-sub">Massage · Mobility · Therapy · Breathwork</span>
-      <span class="category-btn-arrow">↓ 4 practitioners</span>
+  <!-- BODY -->
+  <div class="service-group reveal">
+    <div class="service-group-label">
+      <span class="service-group-name">Body</span>
+      <div class="service-group-rule"></div>
+    </div>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619823" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Shiatsu Massage</span>
+        <span class="service-row-desc">Rhythmic pressure and deep stretches for circulation, organ function, and muscle recovery.</span>
+      </div>
+      <span class="service-row-practitioner">Rhea Mallari</span>
+      <span class="service-row-price">$100 / hr</span>
+      <span class="service-row-book">Book →</span>
     </a>
-    <a href="#mind" class="category-btn">
-      <span class="category-btn-name">Mind</span>
-      <span class="category-btn-sub">Past Life Healing · Nutrition · Intuitive Readings</span>
-      <span class="category-btn-arrow">↓ 3 practitioners</span>
+    <a href="https://feyblhouse.optixapp.com/book/resource/623069" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Mobility &amp; Joint Recovery</span>
+        <span class="service-row-desc">1:1 sessions targeting mobility, joint health, and pain relief. Assess, identify, build long-term resilience.</span>
+      </div>
+      <span class="service-row-practitioner">Mark Holzum</span>
+      <span class="service-row-price">$100 / hr</span>
+      <span class="service-row-book">Book →</span>
     </a>
-    <a href="#spirit" class="category-btn">
-      <span class="category-btn-name">Spirit</span>
-      <span class="category-btn-sub">Sound Healing · Reiki · Energy Work</span>
-      <span class="category-btn-arrow">↓ 2 practitioners</span>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619831" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Hypnobreathwork &amp; Somatic Release</span>
+        <span class="service-row-desc">Guided breathwork and somatic movement for nervous system regulation, creative blocks, and burnout.</span>
+      </div>
+      <span class="service-row-practitioner">Shannon Whalen</span>
+      <span class="service-row-price">$150 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619828" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Physical Therapy</span>
+        <span class="service-row-desc">1:1 sessions for pain, injury, and recovery. Root cause diagnosis, personalized plan, return to movement.</span>
+      </div>
+      <span class="service-row-practitioner">Lizzy Rothstein</span>
+      <span class="service-row-price">$200 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/623221" class="service-row service-row-sub" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Strength &amp; Conditioning</span>
+        <span class="service-row-desc">Performance conditioning for dancers and creatives seeking resilience and cross-training.</span>
+      </div>
+      <span class="service-row-practitioner">Lizzy Rothstein</span>
+      <span class="service-row-price">Also available</span>
+      <span class="service-row-book">Book →</span>
     </a>
   </div>
 
-  <div class="practitioners-grid">
-
-    <!-- ── BODY ── -->
-    <div class="p-category reveal" id="body">
-      <span class="p-category-name">Body</span>
-      <div class="p-category-line"></div>
-      <span class="p-category-count">4 practitioners</span>
+  <!-- MIND -->
+  <div class="service-group reveal">
+    <div class="service-group-label">
+      <span class="service-group-name">Mind</span>
+      <div class="service-group-rule"></div>
     </div>
+    <a href="https://feyblhouse.optixapp.com/book/resource/632063" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Past Life Healing</span>
+        <span class="service-row-desc">30-minute sessions with intuitive guidance and energetic clearing — release subconscious blocks, return to flow.</span>
+      </div>
+      <span class="service-row-practitioner">Faith Streng</span>
+      <span class="service-row-price">$250 / session</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619827" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Nutrition Counseling</span>
+        <span class="service-row-desc">Evidence-based guidance on fueling your body for energy, recovery, and long-term wellbeing.</span>
+      </div>
+      <span class="service-row-practitioner">Sherry Lin</span>
+      <span class="service-row-price">$200 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/625452" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Clarity Readings</span>
+        <span class="service-row-desc">1:1 intuitive reading for reconnection and alignment. Calm, grounded, focused on what comes next.</span>
+      </div>
+      <span class="service-row-practitioner">Haley Jonae</span>
+      <span class="service-row-price">$222 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+  </div>
 
-    <!-- Rhea -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/rhea-mallari.jpg" alt="Rhea Mallari">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Shiatsu Massage · Stretching</span>
-          <h3 class="p-name">Rhea Mallari</h3>
-          <p class="p-price">$100 / hr</p>
-          <p class="p-desc">Stress-relieving pressure point therapy done over clothes or a towel. Rhythmic pressure supports circulation, organ function, and muscle recovery. Deep stretches ease tension and restore mobility.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619823" class="p-book" target="_blank">Book with Rhea →</a>
-      </div>
+  <!-- SPIRIT -->
+  <div class="service-group reveal">
+    <div class="service-group-label">
+      <span class="service-group-name">Spirit</span>
+      <div class="service-group-rule"></div>
     </div>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619829" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Creative Reset</span>
+        <span class="service-row-desc">Sound, movement, breathwork, and journaling woven into a full creative reset for body and nervous system.</span>
+      </div>
+      <span class="service-row-practitioner">Reanna Holt</span>
+      <span class="service-row-price">$165 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619822" class="service-row service-row-sub" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Sound Healing &amp; Integration</span>
+        <span class="service-row-desc">Therapeutic sound with guided journaling for nervous system regulation and creative realignment.</span>
+      </div>
+      <span class="service-row-practitioner">Reanna Holt</span>
+      <span class="service-row-price">Also available</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619825" class="service-row" target="_blank">
+      <div class="service-row-info">
+        <span class="service-row-name">Reiki Healing</span>
+        <span class="service-row-desc">Full-body energy healing with head massage, aromatherapy, and red light therapy — a complete energetic reset.</span>
+      </div>
+      <span class="service-row-practitioner">Bruna Nessif</span>
+      <span class="service-row-price">$250 / hr</span>
+      <span class="service-row-book">Book →</span>
+    </a>
+  </div>
+</section>
 
-    <!-- Mark -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/mark-holzum.jpg" alt="Mark Holzum">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Mobility · Joint Recovery</span>
-          <h3 class="p-name">Mark Holzum</h3>
-          <p class="p-price">$100 / hr</p>
-          <p class="p-desc">Personalized 1:1 sessions focused on mobility, joint health, and pain relief. We assess how your body moves, identify what's limiting you, and apply targeted strategies for strength and long-term resilience.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/623069" class="p-book" target="_blank">Book with Mark →</a>
-      </div>
+<!-- DAY PASS INTERSTITIAL -->
+<section class="daypass-section">
+  <div class="daypass-inner">
+    <div class="daypass-text reveal">
+      <span class="daypass-eyebrow">Included with every booking</span>
+      <h2 class="daypass-title">A full day<br><em>in the house.</em></h2>
+      <p class="daypass-body">Book any session and your day pass unlocks 8am to 2am access to Feybl's coworking spaces, creative studios, café, and community — all in Burbank. Your session starts the clock. What you do with the rest is yours.</p>
+      <span class="daypass-hours">8am &nbsp;·&nbsp; 2am &nbsp;·&nbsp; Burbank, CA</span>
     </div>
-
-    <!-- Shannon -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/shannon-whalen.jpg" alt="Shannon Whalen">
+    <div class="daypass-photos reveal">
+      <div class="daypass-photos-top">
+        <img src="https://mholzum.github.io/Feybl-practitioners/feybl-artist-coworking-16.jpg" alt="Feybl — coworking">
+        <img src="https://mholzum.github.io/Feybl-practitioners/feybl-artist-coworking-8.jpg" alt="Feybl — Feel Room">
       </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Hypno Breathwork · Somatic Release</span>
-          <h3 class="p-name">Shannon Whalen</h3>
-          <p class="p-price">$150 / hr</p>
-          <p class="p-desc">A private guided session blending breathwork and somatic movement for artists, performers, and creatives. Regulates the nervous system, releases tension, and deepens embodied presence. Ideal for creative blocks, performance anxiety, and burnout.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619831" class="p-book" target="_blank">Book with Shannon →</a>
-      </div>
+      <img src="https://mholzum.github.io/Feybl-practitioners/feybl-artist-coworking-21.jpg" alt="Feybl — café">
     </div>
+  </div>
+</section>
 
-    <!-- Lizzie -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/lizzie-rothstein.jpg" alt="Lizzie Rothstein">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Physical Therapy</span>
-          <h3 class="p-name">Lizzie Rothstein</h3>
-          <p class="p-price">$200 / hr</p>
-          <p class="p-desc">One-on-one sessions for dancers dealing with pain or injury. Identifies root causes, builds a personalized recovery plan, and supports your optimal return to movement.</p>
-          <div class="p-second">
-            <span class="p-tag">Strength &amp; Conditioning</span>
-            <p class="p-price">Also available</p>
-            <p class="p-desc">Performance-focused conditioning for dancers seeking resilience, cross-training, and long-term wellness.</p>
-            <a href="https://feyblhouse.optixapp.com/book/resource/623221" class="p-book" target="_blank">Book S&amp;C →</a>
-          </div>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619828" class="p-book" target="_blank" style="margin-top:20px;">Book Physical Therapy →</a>
-      </div>
+<!-- PRACTITIONERS COMPACT -->
+<section class="practitioners-compact-section">
+  <h2 class="practitioners-compact-title reveal">The people behind<br><em>the sessions.</em></h2>
+  <div class="practitioners-compact-grid">
+    <a href="https://feyblhouse.optixapp.com/book/resource/619823" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/rhea-mallari.jpg" alt="Rhea Mallari"></div>
+      <span class="pc-name">Rhea Mallari</span>
+      <span class="pc-specialty">Shiatsu Massage</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/623069" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/mark-holzum.jpg" alt="Mark Holzum"></div>
+      <span class="pc-name">Mark Holzum</span>
+      <span class="pc-specialty">Mobility</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619831" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/shannon-whalen.jpg" alt="Shannon Whalen"></div>
+      <span class="pc-name">Shannon Whalen</span>
+      <span class="pc-specialty">Breathwork</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619828" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/lizzie-rothstein.jpg" alt="Lizzy Rothstein"></div>
+      <span class="pc-name">Lizzy Rothstein</span>
+      <span class="pc-specialty">Physical Therapy</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/632063" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/faith-streng.jpg" alt="Faith Streng"></div>
+      <span class="pc-name">Faith Streng</span>
+      <span class="pc-specialty">Past Life Healing</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619827" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/sherry-lin.jpg" alt="Sherry Lin"></div>
+      <span class="pc-name">Sherry Lin</span>
+      <span class="pc-specialty">Nutrition</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/625452" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/haley-jonae.jpg" alt="Haley Jonae" style="object-position:center 25%;"></div>
+      <span class="pc-name">Haley Jonae</span>
+      <span class="pc-specialty">Clarity Readings</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619829" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/reanna-holt.jpg" alt="Reanna Holt"></div>
+      <span class="pc-name">Reanna Holt</span>
+      <span class="pc-specialty">Sound Healing</span>
+    </a>
+    <a href="https://feyblhouse.optixapp.com/book/resource/619825" class="pc-portrait reveal" target="_blank">
+      <div class="pc-img"><img src="https://mholzum.github.io/Feybl-practitioners/bruna-nessif.jpg" alt="Bruna Nessif"></div>
+      <span class="pc-name">Bruna Nessif</span>
+      <span class="pc-specialty">Reiki</span>
+    </a>
+    <div class="practitioners-join">
+      <p class="practitioners-join-text">Are you a practitioner? <em>We'd love to have you.</em></p>
+      <a href="https://tally.so/r/gDDvJD" class="btn-join-sm" target="_blank">Apply to Join →</a>
     </div>
-
-    <!-- ── MIND ── -->
-    <div class="p-category reveal" id="mind">
-      <span class="p-category-name">Mind</span>
-      <div class="p-category-line"></div>
-      <span class="p-category-count">3 practitioners</span>
-    </div>
-
-    <!-- Faith -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/faith-streng.jpg" alt="Faith Streng">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Past Life Healing · Intuitive Guidance · Energy Clearing</span>
-          <h3 class="p-name">Faith Streng</h3>
-          <p class="p-price">$250 / session</p>
-          <p class="p-desc">30-minute past life healing sessions with intuitive guidance and energetic clearing — to release subconscious blocks, uncover hidden patterns, and return to creative flow.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/632063" class="p-book" target="_blank">Book with Faith →</a>
-      </div>
-    </div>
-
-    <!-- Sherry -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/sherry-lin.jpg" alt="Sherry Lin">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Nutrition Counseling</span>
-          <h3 class="p-name">Sherry Lin</h3>
-          <p class="p-price">$200 / hr</p>
-          <p class="p-desc">Evidence-based nutrition counseling for creatives and performers. Personalized guidance on fueling your body to support energy, recovery, and long-term wellbeing.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619827" class="p-book" target="_blank">Book with Sherry →</a>
-      </div>
-    </div>
-
-    <!-- Haley -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/haley-jonae.jpg" alt="Haley Jonae" style="object-position: center 25%;">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Clarity Readings · Intuitive</span>
-          <h3 class="p-name">Haley Jonae</h3>
-          <p class="p-price">$222 / hr</p>
-          <p class="p-desc">A 1:1 intuitive reading that helps you reconnect with yourself and step into your next chapter with calm, grounded clarity — focused on alignment, not prediction.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/625452" class="p-book" target="_blank">Book with Haley →</a>
-      </div>
-    </div>
-
-    <!-- ── SPIRIT ── -->
-    <div class="p-category reveal" id="spirit">
-      <span class="p-category-name">Spirit</span>
-      <div class="p-category-line"></div>
-      <span class="p-category-count">2 practitioners</span>
-    </div>
-
-    <!-- Reanna -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/reanna-holt.jpg" alt="Reanna Holt">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Sound Healer · Creative Reset</span>
-          <h3 class="p-name">Reanna Holt</h3>
-          <p class="p-price">$165 / hr</p>
-          <p class="p-desc">A restorative session combining gentle intuitive movement, breathwork, therapeutic sound, vocal toning, and journaling prompts for full creative reset.</p>
-          <div class="p-second">
-            <span class="p-tag">Sound Healing &amp; Integration</span>
-            <p class="p-price">Also available</p>
-            <p class="p-desc">Sound healing woven with guided journaling and gentle movement for nervous system regulation and creative realignment.</p>
-            <a href="https://feyblhouse.optixapp.com/book/resource/619822" class="p-book" target="_blank">Book Sound Session →</a>
-          </div>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619829" class="p-book" target="_blank" style="margin-top:20px;">Book Creative Reset →</a>
-      </div>
-    </div>
-
-    <!-- Bruna -->
-    <div class="p-card reveal">
-      <div class="p-card-img">
-        <img src="https://mholzum.github.io/Feybl-practitioners/bruna-nessif.jpg" alt="Bruna Nessif">
-      </div>
-      <div class="p-card-body">
-        <div class="p-card-top">
-          <span class="p-tag">Reiki · Energy Healing</span>
-          <h3 class="p-name">Bruna Nessif</h3>
-          <p class="p-price">$250 / hr</p>
-          <p class="p-desc">One-hour sessions with light head and hand massage, aromatherapy, full-body Reiki energy healing, and red light therapy — a complete energetic reset for body and mind.</p>
-        </div>
-        <a href="https://feyblhouse.optixapp.com/book/resource/619825" class="p-book" target="_blank">Book with Bruna →</a>
-      </div>
-    </div>
-
-    <!-- Join card — spans full width -->
-    <div class="p-card-join reveal">
-      <img src="https://mholzum.github.io/Feybl-practitioners/feybl-primary-champagne-gold-emblem.png" alt="Feybl">
-      <h3 class="join-title">Are you a practitioner?</h3>
-      <p class="join-body">Feybl is selective but growing. If you work with creatives and want a home at the House, we'd love to hear from you.</p>
-      <a href="https://tally.so/r/gDDvJD" class="btn-join" target="_blank">Apply to Join →</a>
-    </div>
-
   </div>
 </section>
 
@@ -1783,11 +1877,17 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Image path correction — GitHub Pages uses lowercase extensions
-// The images are JPEGs; we reference .jpg for the CSS background-image
-// and the <img> tags use .jpg too. If your repo has .JPEG extension,
-// update the paths below after uploading:
-// Replace .jpg → .JPEG if needed, or rename files in the repo to .jpg
+// Live Burbank clock
+function updateClock() {
+  const time = new Date().toLocaleTimeString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    hour: 'numeric', minute: '2-digit', hour12: true
+  });
+  const el = document.getElementById('burbank-clock');
+  if (el) el.textContent = "It's " + time + " in Burbank";
+}
+updateClock();
+setInterval(updateClock, 60000);
 </script>
 
 </body>
