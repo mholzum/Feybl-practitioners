@@ -138,13 +138,13 @@ nav a.nav-pill.gold:hover {
   to   { transform: scale(1.0); }
 }
 
-/* Directional overlay: heavy dark on left (text side), opens up on right */
+/* Overlay: left fade for text legibility, bottom anchor, photo visible throughout */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(10,10,15,0.88) 0%, rgba(10,10,15,0.55) 45%, rgba(10,10,15,0.1) 100%),
-    linear-gradient(to top, rgba(10,10,15,0.7) 0%, transparent 40%);
+    linear-gradient(to right, rgba(10,10,15,0.72) 0%, rgba(10,10,15,0.35) 50%, rgba(10,10,15,0.05) 100%),
+    linear-gradient(to top, rgba(10,10,15,0.65) 0%, transparent 35%);
 }
 
 .hero-vignette { display: none; }
@@ -1384,7 +1384,7 @@ footer {
   .practitioners-compact-grid { grid-template-columns: repeat(3, 1fr); }
   .service-row-price { min-width: auto; }
   .gallery-grid { grid-template-columns: 1fr; }
-  .hero-bg { background-position: center 80%; }
+  .hero-bg { background-position: center bottom; }
   .hero-content { padding: 0 24px 80px; }
   .hero-title { font-size: clamp(32px, 10vw, 48px); line-height: 1.0; margin-bottom: 20px; }
   .hero-sub { font-size: 14px; }
