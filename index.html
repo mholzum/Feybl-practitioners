@@ -195,7 +195,7 @@ nav a.nav-pill.gold:hover {
 
 .hero-title {
   font-family: 'Libre Baskerville', serif;
-  font-size: clamp(54px, 7.5vw, 96px);
+  font-size: clamp(34px, 7.5vw, 96px);
   line-height: 0.96;
   font-weight: 300;
   color: var(--cream);
@@ -209,6 +209,18 @@ nav a.nav-pill.gold:hover {
   display: block;
 }
 
+.cat-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212,184,150,0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.cat-link:hover {
+  color: var(--cream);
+  border-color: var(--cream);
+}
+
 .hero-sub {
   font-size: 15px;
   line-height: 1.75;
@@ -220,38 +232,6 @@ nav a.nav-pill.gold:hover {
 .hero-sub strong {
   color: var(--cream);
   font-weight: 400;
-}
-
-/* Body / Mind / Spirit category filters */
-.hero-categories {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 36px;
-  flex-wrap: wrap;
-}
-
-.cat-btn {
-  font-family: 'Jost', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 10px 24px;
-  border: 1px solid rgba(245,240,232,0.28);
-  background: transparent;
-  color: rgba(245,240,232,0.65);
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.cat-btn:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-.cat-btn.active {
-  background: var(--burgundy);
-  border-color: var(--burgundy);
-  color: var(--cream);
 }
 
 .hero-actions {
@@ -1414,7 +1394,9 @@ footer {
   .service-row-price { min-width: auto; }
   .gallery-grid { grid-template-columns: 1fr; }
   .hero-bg { background-position: center 80%; }
-  .hero-content { padding: 0 32px 80px; }
+  .hero-content { padding: 0 24px 80px; }
+  .hero-title { font-size: clamp(32px, 10vw, 48px); line-height: 1.0; margin-bottom: 20px; }
+  .hero-sub { font-size: 14px; }
 }
 </style>
 </head>
@@ -1448,14 +1430,8 @@ footer {
     </div>
     <h1 class="hero-title">
       Wellness for
-      <em>body, mind &amp; spirit.</em>
+      <em><a href="#body" class="cat-link">body</a>, <a href="#mind" class="cat-link">mind</a> &amp; <a href="#spirit" class="cat-link">spirit</a>.</em>
     </h1>
-    <div class="hero-categories">
-      <button class="cat-btn active" data-cat="all">All</button>
-      <button class="cat-btn" data-cat="body">Body</button>
-      <button class="cat-btn" data-cat="mind">Mind</button>
-      <button class="cat-btn" data-cat="spirit">Spirit</button>
-    </div>
     <p class="hero-sub">
       Book a 1:1 session with a vetted practitioner.
       <strong>Every booking includes a full day pass</strong> — that's full access to Feybl House from 8am to 2am. Arrive early, stay as long as you need.
@@ -1511,7 +1487,7 @@ footer {
   </div>
 
   <!-- BODY -->
-  <div class="service-group reveal">
+  <div class="service-group reveal" id="body">
     <div class="service-group-label">
       <span class="service-group-name">Body</span>
       <div class="service-group-rule"></div>
@@ -1564,7 +1540,7 @@ footer {
   </div>
 
   <!-- MIND -->
-  <div class="service-group reveal">
+  <div class="service-group reveal" id="mind">
     <div class="service-group-label">
       <span class="service-group-name">Mind</span>
       <div class="service-group-rule"></div>
@@ -1599,7 +1575,7 @@ footer {
   </div>
 
   <!-- SPIRIT -->
-  <div class="service-group reveal">
+  <div class="service-group reveal" id="spirit">
     <div class="service-group-label">
       <span class="service-group-name">Spirit</span>
       <div class="service-group-rule"></div>
@@ -1908,26 +1884,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     // Open clicked if it was closed
     if (!isOpen) item.classList.add('open');
     btn.setAttribute('aria-expanded', !isOpen);
-  });
-});
-
-// Category filter
-const catBtns = document.querySelectorAll('.cat-btn');
-const portraits = document.querySelectorAll('.pc-portrait');
-
-catBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    catBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.cat;
-    portraits.forEach(card => {
-      const match = cat === 'all' || card.dataset.cat === cat;
-      card.style.opacity = match ? '1' : '0.15';
-      card.style.pointerEvents = match ? 'auto' : 'none';
-    });
-    // Scroll to grid
-    const grid = document.querySelector('.pc-grid');
-    if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
