@@ -1379,7 +1379,9 @@ footer {
 }
 
 @media (max-width: 640px) {
-  nav a.nav-pill { padding: 8px 12px; font-size: 9px; }
+  nav { display: flex; justify-content: space-between; padding: 14px 20px; }
+  nav a.nav-pill { padding: 8px 14px; font-size: 9px; }
+  nav a.nav-pill.gold { display: none; }
   .nav-logo img { height: 26px; }
   .nav-center { display: none; }
   .practitioners-compact-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1387,6 +1389,10 @@ footer {
   .gallery-grid { grid-template-columns: 1fr; }
   .hero { height: 80vh; min-height: 560px; align-items: flex-end; }
   .hero-bg { background-position: center 55%; }
+  .hero-overlay {
+    background:
+      linear-gradient(to bottom, rgba(10,10,15,0.82) 0%, rgba(10,10,15,0.3) 50%, rgba(10,10,15,0.78) 100%);
+  }
   .hero-content { padding: 0 24px 48px; }
   .hero-title { font-size: clamp(28px, 8vw, 42px); line-height: 1.1; margin-bottom: 20px; }
   .hero-sub { font-size: 14px; }
@@ -1401,7 +1407,7 @@ footer {
     <img src="https://mholzum.github.io/Feybl-practitioners/feybl-secondary-dark-background-wordmark.png" alt="Feybl">
   </a>
   <div class="nav-center">
-    <a href="#services">Services</a>
+    <a href="#practitioners">Services</a>
     <a href="https://feybl.com" target="_blank">What is Feybl?</a>
     <a href="https://feybl.com/social-club-for-artists-in-los-angeles/" target="_blank">Membership</a>
   </div>
